@@ -3,133 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ariel Shamay - Computer Science Student CV">
-    <meta name="author" content="Ariel Shamay">
     <title>Ariel Shamay - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10.8pt;
+            line-height: 1.38;
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            margin: 0 auto;
+            padding: 14mm 18mm 12mm 18mm;
+            background: white;
+            color: #000;
+            overflow: hidden;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                padding: 14mm 18mm 12mm 18mm;
+                margin: 0;
+            }
+        }
+
+        /* ── Header ── */
+        .cv-header {
+            text-align: center;
+            margin-bottom: 6pt;
+        }
+
+        .cv-name {
+            font-size: 22pt;
+            font-weight: bold;
+            letter-spacing: 0.5pt;
+            margin-bottom: 1pt;
+        }
+
+        .cv-location {
+            font-size: 10pt;
+            margin-bottom: 2pt;
+        }
+
+        .cv-contact {
+            font-size: 9.5pt;
+        }
+
+        .cv-contact a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .cv-contact .sep {
+            margin: 0 4pt;
+            color: #555;
+        }
+
+        /* ── Section titles ── */
+        .sec-title {
+            font-size: 11.5pt;
+            font-weight: bold;
+            border-bottom: 0.8pt solid #000;
+            padding-bottom: 1pt;
+            margin: 9pt 0 4pt 0;
+        }
+
+        /* ── List hierarchy matching the PDF ── */
+        ul.lvl1 {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.lvl1 > li {
+            padding-left: 12pt;
+            text-indent: -12pt;
+            margin-bottom: 3pt;
+        }
+
+        ul.lvl1 > li::before {
+            content: "\2022\00A0";  /* bullet + nbsp */
+        }
+
+        ul.lvl2 {
+            list-style: none;
+            padding: 0;
+            margin: 1pt 0 0 12pt;
+        }
+
+        ul.lvl2 > li {
+            padding-left: 12pt;
+            text-indent: -12pt;
+            margin-bottom: 1.5pt;
+        }
+
+        ul.lvl2 > li::before {
+            content: "\2013\00A0"; /* en-dash + nbsp */
+        }
+
+        ul.lvl3 {
+            list-style: none;
+            padding: 0;
+            margin: 1pt 0 0 12pt;
+        }
+
+        ul.lvl3 > li {
+            padding-left: 14pt;
+            text-indent: -14pt;
+            margin-bottom: 1pt;
+        }
+
+        ul.lvl3 > li::before {
+            content: "*\00A0";
+        }
+
+        /* Military uses only lvl2 style with no bullet parent */
+        ul.dashes {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.dashes > li {
+            padding-left: 12pt;
+            text-indent: -12pt;
+            margin-bottom: 2pt;
+        }
+
+        ul.dashes > li::before {
+            content: "\2013\00A0";
+        }
+
+        /* ── Row helper (institution + location right-aligned) ── */
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        em { font-style: italic; }
+        strong { font-weight: bold; }
+
+        /* ── Projects for Fun label ── */
+        .tag {
+            font-size: 9pt;
+            font-style: italic;
+            color: #444;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Ariel Shamay</h1>
-        <p>
-            052-6522036 |
-            <a href="mailto:arielsh49@gmail.com">arielsh49@gmail.com</a> |
-            <a href="https://github.com/ArielShamay" target="_blank">github.com/ArielShamay</a> |
-            <a href="https://linkedin.com/in/ariel-shamay" target="_blank">linkedin.com/in/ariel-shamay</a>
-        </p>
-        <img src="photo_2026-01-28_10-23-57.jpg" alt="Professional profile picture of Ariel Shamay" width="120" height="120">
-    </header>
 
-    <hr>
+    <!-- Header -->
+    <div class="cv-header">
+        <div class="cv-name">Ariel Shamay</div>
+        <div class="cv-location">Ariel, Israel</div>
+        <div class="cv-contact">
+            052-6522036
+            <span class="sep">&amp;</span>
+            <a href="mailto:arielsh49@gmail.com">arielsh49@gmail.com</a>
+            <span class="sep">&#169;</span>
+            <a href="https://github.com/ArielShamay">github.com/ArielShamay</a>
+            <span class="sep">&#239;</span>
+            <a href="https://linkedin.com/in/ariel-shamay">linkedin.com/in/ariel-shamay</a>
+        </div>
+    </div>
 
-    <section>
-        <h2>Summary</h2>
-        <ul>
-            <li>Computer Science student with a solid academic background in programming and software development. Highly motivated, exceptional interpersonal skills and a proven ability to collaborate effectively within team environments. Currently seeking a student position in software development or a related technical role to leverage academic knowledge and practical skills.</li>
-        </ul>
-    </section>
+    <!-- Summary -->
+    <div class="sec-title">Summary</div>
+    <ul class="lvl1">
+        <li>Computer Science student with a solid academic background in programming and software development. Highly motivated, exceptional interpersonal skills and a proven ability to collaborate effectively within team environments. Currently seeking a student position in software development or a related technical role to leverage academic knowledge and practical skills.</li>
+    </ul>
 
-    <hr>
-
-    <section>
-        <h2>Education</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Institution</th>
-                    <th>Degree</th>
-                    <th>Location</th>
-                    <th>Expected Graduation</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Ariel University</strong></td>
-                    <td><em>B.Sc. in Computer Science</em></td>
-                    <td>Ariel, Israel</td>
-                    <td><em>2026</em></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Relevant Coursework</h3>
-        <ul>
-            <li>Data Structures and Algorithms</li>
-            <li>Object-Oriented Programming</li>
-            <li>Operating Systems</li>
-            <li>Databases</li>
-            <li>Machine Learning and Deep Learning</li>
-            <li>Natural Language Processing (NLP)</li>
-        </ul>
-        <p>
-            <em>Completed all mandatory courses; remaining studies consist exclusively of elective courses (2 semesters remaining).</em>
-        </p>
-    </section>
-
-    <hr>
-
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Programming Languages:</strong> Java, C++, C, Python, SQL</li>
-            <li><strong>Languages:</strong> Hebrew (Native), English (Very Good)</li>
-        </ul>
-    </section>
-
-
-    <hr>
-
-    <section>
-        <h2>Projects</h2>
-
-        <article>
-            <h3>Graph Algorithms Framework for Network Applications</h3>
-            <ul>
-                <li>Developed C++ Graph framework with advanced algorithms.</li>
-                <li>Created comprehensive testing suites ensuring desired behavior.</li>
+    <!-- Education -->
+    <div class="sec-title">Education</div>
+    <ul class="lvl1">
+        <li>
+            <div class="row"><strong>Ariel University</strong><span>Ariel, Israel</span></div>
+            <div class="row"><em>B.Sc. in Computer Science</em><span>Expected Graduation: 2026</span></div>
+            <ul class="lvl2">
+                <li>Relevant Coursework:
+                    <ul class="lvl3">
+                        <li>Data Structures and Algorithms</li>
+                        <li>Object-Oriented Programming</li>
+                        <li>Operating Systems</li>
+                        <li>Databases</li>
+                        <li>Machine Learning and Deep Learning</li>
+                        <li>Natural Language Processing (NLP)</li>
+                    </ul>
+                </li>
+                <li>Completed all mandatory courses; remaining studies consist exclusively of elective courses (2 semesters remaining).</li>
             </ul>
-        </article>
+        </li>
+    </ul>
 
-        <article>
-            <h3>Network Communication Tool (mynetcat)</h3>
-            <ul>
+    <!-- Skills -->
+    <div class="sec-title">Skills</div>
+    <ul class="lvl1">
+        <li><strong>Programming Languages:</strong> Java, C++, C, Python, SQL, TypeScript, JavaScript, HTML</li>
+        <li><strong>Frameworks &amp; Tools:</strong> React, OpenAI API, CrewAI, Google Gemini API, Git, Jupyter Notebook</li>
+        <li><strong>Languages:</strong> Hebrew (Native), English (Very Good)</li>
+    </ul>
+
+    <!-- Projects -->
+    <div class="sec-title">Projects</div>
+    <ul class="lvl1">
+        <li>
+            <strong>Visual Algo &ndash; Graph Algorithms Framework with Interactive Visualization</strong>
+            <ul class="lvl2">
+                <li>Developed a C++ graph framework with advanced algorithms; extended with a TypeScript &amp; React web interface for real-time visualization.</li>
+                <li>Supports DFS, BFS, shortest paths, and cycle detection; includes comprehensive test suites ensuring correct behavior.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Network Communication Tool (mynetcat)</strong>
+            <ul class="lvl2">
                 <li>Built C++ network utility supporting TCP, UDP, and Unix Domain Sockets.</li>
                 <li>Implemented I/O redirection, external program execution, and a custom Tic-Tac-Toe game.</li>
                 <li>Integrated timeout mechanisms and TCP multiplexing for handling multiple client connections.</li>
             </ul>
-        </article>
-
-        <article>
-            <h3>Fake News Detection with Deep Learning</h3>
-            <ul>
+        </li>
+        <li>
+            <strong>Fake News Detection with Deep Learning</strong>
+            <ul class="lvl2">
                 <li>Developed Python-based classification models (Logistic Regression, FCNN, LSTM) for detecting fake news headlines.</li>
                 <li>Implemented TF-IDF vectorization, text preprocessing, and optimized hyperparameters achieving over 90% accuracy.</li>
             </ul>
-        </article>
-    </section>
+        </li>
+    </ul>
 
-    <hr>
+    <!-- Projects for Fun -->
+    <div class="sec-title">Projects for Fun</div>
+    <ul class="lvl1">
+        <li>
+            <strong>SentinelFetal &ndash; AI Fetal Monitoring System</strong> <span class="tag">(Hackathon)</span>
+            <ul class="lvl2">
+                <li>Built during a hackathon: hybrid AI system for fetal monitoring combining the MOMENT model with a rule engine based on the Israeli medical position paper.</li>
+                <li>Trained and fine-tuned the model using <strong>Google Colab</strong>; implemented in Python.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>my-ai-game &ndash; AI-Powered Text Adventure Game</strong>
+            <ul class="lvl2">
+                <li>Full-stack text adventure built with React, TypeScript, and OpenAI API; features streaming AI responses, inventory system, and combat mechanics.</li>
+                <li>Integrated DALL-E image generation, TTS narration, and save/load functionality.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Agentic Software House</strong>
+            <ul class="lvl2">
+                <li>AI-powered multi-agent system where autonomous agents collaborate as a development team to build software from a single prompt.</li>
+                <li>Built in Python using a modular agent architecture.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Visual Catan &ndash; Settlers of Catan with AI Agents</strong>
+            <ul class="lvl2">
+                <li>Full implementation of Settlers of Catan in TypeScript with an advanced modular architecture and support for AI agents.</li>
+            </ul>
+        </li>
+    </ul>
 
-    <section>
-        <h2>Military Service</h2>
-        <h4>Combat Soldier - Special Operations Team, Sayeret Haruv</h4>
-        <ul>
-            <li>Served full military service as a <strong>Senior Sergeant</strong></li>
-            <li>Security Clearance Level: <strong>02</strong></li>
-            <li>Reserve Service: 450 brigade, Over 300 days of reserve duty in a combat role, mostly inside Gaza</li>
-        </ul>
-    </section>
-
-    <hr>
-
-    <section>
-        <h2>Top Achievements</h2>
-        <h5>Professional Highlights</h5>
-        <ol>
-            <li>Developed classification models achieving <strong>over 90% accuracy</strong> in fake news detection</li>
-            <li>Built comprehensive C++ Graph framework with advanced algorithms for network applications</li>
-            <li>Completed <strong>over 300 days</strong> of reserve duty in combat role</li>
-        </ol>
-    </section>
+    <!-- Military Service -->
+    <div class="sec-title">Military Service</div>
+    <ul class="dashes">
+        <li>Served full military service as a <strong>Senior Sergeant</strong>, Combat Soldier, Special Operations Team, Sayeret Haruv</li>
+        <li>Security Clearance Level: <strong>02</strong></li>
+        <li>Reserve Service: 450 Brigade &ndash; Over <strong>300 days</strong> of reserve duty in a combat role, mostly inside Gaza.</li>
+    </ul>
 
 </body>
 </html>
